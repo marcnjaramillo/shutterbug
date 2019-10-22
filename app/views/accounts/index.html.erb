@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <% @posts.each do |post| %>
+        <div><%= post.account.email %></div>
+        <% if post.image.attached? %>
+        <%= image_tag post.image, class: "img img-fluid" %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
