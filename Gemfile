@@ -6,6 +6,7 @@ ruby '2.6.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0'
 
+gem 'aws-sdk-s3', require: false
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -15,10 +16,6 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'bootstrap', '~>4.3.1'
 
 gem 'devise'
-
-gem 'carrierwave'
-gem 'figaro'
-gem 'fog'
 
 gem 'foreman'
 
