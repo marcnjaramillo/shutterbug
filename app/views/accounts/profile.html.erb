@@ -1,14 +1,32 @@
 <div class="container">
   <div class="row">
     <div class="col-4">
-    
+      <% if @account.profile_image.attached? %>
+        <%= image_tag @account.profile_image.variant(resize: "200x200"), class: "profile-pic" %>
+      <% end %>
     </div>
     <div class="col-8 text-left">
       <h1><%= @account.full_name %></h1>
-      <%= link_to edit_account_registration_path,class: "btn btn-secondary" %>
+      <%= link_to "Edit Profile", edit_account_registration_path,class: "btn btn-secondary" %>
       <div class="profile-stats"><%= @account.posts.count %> posts</div>
       <div class="profile-stats"><%= @account.total_followers %> followers</div>
       <div class="profile-stats"><%= @account.total_following %> following</div>
+
+      <p><%= @account.full_name %></p>
+      <%= simple_format @account.description %>
+
+      <p><%= link_to @account.website if @account.website.present? %></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 profile-posts">
+      <% @posts.each do |post| %>
+        <div class="col-4">
+          <div class="post">
+            <%= image_tag post.image, class: "img img-fluid" %>
+          </div>        
+        </div>
+      <%end%>
     </div>
   </div>
 </div>
