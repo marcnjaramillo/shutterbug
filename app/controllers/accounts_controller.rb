@@ -6,8 +6,8 @@ class AccountsController < ApplicationController
     @posts = Post.active
   end
 
-  def show
-    
+  def profile
+    @posts = @account.posts.active
   end
 
   def set_account
