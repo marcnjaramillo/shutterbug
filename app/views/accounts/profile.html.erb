@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-4">
       <% if @account.profile_image.attached? %>
-        <%= image_tag @account.profile_image.variant(resize: "200x200"), class: "profile-pic" %>
+        <%= image_tag @account.profile_image.variant(resize_to_fit: [200, 200]), class: "profile-pic" %>
       <% end %>
     </div>
     <div class="col-8 text-left">
@@ -18,8 +18,7 @@
       <p><%= link_to @account.website if @account.website.present? %></p>
     </div>
   </div>
-  <div class="row">
-    <div class="col-12 profile-posts">
+  <div class="row profile-posts">
       <% @posts.each do |post| %>
         <div class="col-4">
           <div class="post">
@@ -27,6 +26,5 @@
           </div>        
         </div>
       <%end%>
-    </div>
   </div>
 </div>
