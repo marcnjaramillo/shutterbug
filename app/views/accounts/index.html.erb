@@ -3,10 +3,20 @@
     <div class="col-8">
       <% @posts.each do |post| %>
       <div class="post">
-        <div class="post-meta"><%= post.account.username %></div>
-          <% if post.image.attached? %>
-          <%= image_tag post.image, class: "img img-fluid" %>
+        <div class="post-meta">
+          <% if post.account.profile_image.attached? %>
+            <%= link_to image_tag(post.account.profile_image.variant(resize_to_fit: [50, 50]), class: "profile-pic" ), profile_path(post.account.username) %>
           <% end %>
+         <%= link_to post.account.username, profile_path(post.account.username), class:"text-dark"  %>
+         </div>
+          <% if post.image.attached? %>
+            <%= image_tag post.image, class: "img img-fluid" %>
+          <% end %>
+          <div class="post-details">
+            <p><strong><%= post.total_likes %> likes</strong></p>
+            <p><strong><%= link_to post.account.username, profile_path(post.account.username), class: "text-dark" %></strong><%= simple_format post.description %></p>
+            <p class="text-muted"><%= time_ago_in_words post.created_at %> ago</p>
+          </div>
         </div>
         <% end %>
     </div>
