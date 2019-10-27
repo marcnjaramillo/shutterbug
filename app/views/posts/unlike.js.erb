@@ -1,0 +1,5 @@
+<% if @success == false %>
+  $(".like-<%= @post_id %>").removeClass("active").addClass("post-like").removeClass("post-unlike");
+<% end %>
+
+$("#post-<%= @post_id %>-likes").text("<%= @post_likes %> likes");
