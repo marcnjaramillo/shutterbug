@@ -23,22 +23,4 @@ class LikesController < ApplicationController
       }
       end
   end
-
-  # def remove_like
-  #   @post_id = params[:post_id]
-  #   existing_like = Like.where(post_id: params[:post_id], account_id: current_account.id)
-
-  #   respond_to do |format|
-  #     format.js {
-
-  #       existing_like.first.destroy
-
-  #       @success = false
-
-  #       @post_likes = Post.find(@post_id).total_likes_count
-  #       render "posts/unlike"
-  #     }
-  #     end
-  # end
-
 end

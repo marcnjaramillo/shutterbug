@@ -1,9 +1,14 @@
 # frozen_string_literal: true
 
-class DeviseCreateAccounts < ActiveRecord::Migration[6.0]
+class DeviseCreateAccounts < ActiveRecord::Migration[5.2]
   def change
     create_table :accounts do |t|
       ## Database authenticatable
+      t.string :first_name, limit: 20
+      t.string :last_name, limit: 20
+      t.string :username, limit: 20
+      t.text :description
+      t.string :website      
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
 
@@ -18,8 +23,8 @@ class DeviseCreateAccounts < ActiveRecord::Migration[6.0]
       t.integer  :sign_in_count, default: 0, null: false
       t.datetime :current_sign_in_at
       t.datetime :last_sign_in_at
-      t.inet     :current_sign_in_ip
-      t.inet     :last_sign_in_ip
+      # t.inet     :current_sign_in_ip
+      # t.inet     :last_sign_in_ip
 
       ## Confirmable
       # t.string   :confirmation_token
