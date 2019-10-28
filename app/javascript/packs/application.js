@@ -15,19 +15,7 @@ import 'bootstrap';
 import '@fortawesome/fontawesome-free/js/all';
 import '../stylesheets/application';
 
-// document.addEventListener('turbolinks:load', function() {
-//   $('.post-like').on('click', function() {
-//     let post_id = $(this).data('id');
-
-//     $.ajax({
-//       url: '/post/like/' + post_id,
-//       method: 'GET'
-//     }).done(function(response) {
-//       console.log(response);
-//     });
-//   });
-// });
-
+$(document).on('turbolinks:load', function() {});
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.

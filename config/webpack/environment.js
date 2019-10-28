@@ -10,4 +10,5 @@ environment.plugins.prepend(
   })
 );
 
+environment.loaders.prepend('erb', erb)
 module.exports = environment;
