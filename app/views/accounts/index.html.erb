@@ -5,7 +5,7 @@
       <div class="post">
         <div class="post-meta">
           <% if post.account.profile_image.attached? %>
-            <%= link_to image_tag(post.account.profile_image.variant(resize_to_fit: [50, 50]), class: "profile-pic"), profile_path(post.account.username) %>
+            <%= link_to image_tag(post.account.profile_image.variant(resize: "50x50"), class: "profile-pic"), profile_path(post.account.username) %>
           <% end %>
          <%= link_to post.account.username, profile_path(post.account.username), class:"text-dark"  %>
          </div>
@@ -27,7 +27,7 @@
     <div class="col-4">
       <div class="account-summary">
         <% if current_account.profile_image.attached? %>
-          <%= link_to image_tag(current_account.profile_image.variant(resize_to_fit: [50, 50]), class: "profile-pic"), profile_path(current_account.username) %>
+          <%= link_to image_tag(current_account.profile_image.variant(resize: "50x50"), class: "profile-pic"), profile_path(current_account.username) %>
         <% end %>
         <strong><p><%= link_to current_account.username, profile_path(current_account.username), class:"text-dark"  %></strong></p>
         <p>
@@ -37,6 +37,7 @@
       <div class="follower-suggestions">
         <%= link_to "View All", "#", class:"float-right text-dark" %>
         <p class="text-muted">Suggestions for you</p>
+        <%= render "accounts/follower_suggestions"%>
       </div>
     </div>
   </div>
