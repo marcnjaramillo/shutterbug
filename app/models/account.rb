@@ -6,6 +6,7 @@ class Account < ApplicationRecord
 
   has_many :posts
   has_many :likes
+  has_many :followers
   has_one_attached :profile_image
 
   def full_name
@@ -13,11 +14,11 @@ class Account < ApplicationRecord
   end
 
   def total_followers
-    0
+    Follower.where(follower_id: self.id).count
   end
 
   def total_following
-    0
+    Follower.where(following_id: self.id).count
   end
   
 end
