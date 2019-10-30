@@ -2,6 +2,7 @@ class Post < ApplicationRecord
   has_one_attached :image
   belongs_to :account
   has_many :likes
+  has_many :comments
 
   before_create :set_active
 
@@ -13,7 +14,5 @@ class Post < ApplicationRecord
     self.active = true
   end
 
-  def total_likes
-    0
-  end
+
 end

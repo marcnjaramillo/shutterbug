@@ -7,6 +7,7 @@ class Account < ApplicationRecord
   has_many :posts
   has_many :likes
   has_many :followers
+  has_many :comments
   has_one_attached :profile_image
 
   def full_name
