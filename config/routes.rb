@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post "follow/account" => "accounts#follow_account", as: :follow_account
 
   resources :posts, only: [:new, :create, :show]
+  resources :comments, only: [:create]
 
   root to: "public#homepage"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
