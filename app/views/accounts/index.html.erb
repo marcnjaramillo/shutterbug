@@ -15,7 +15,9 @@
           <div class="post-details">
             <div class="post-actions">
               <i class="fa fa-heart like-<%= post.id %> <%= "active" if post_liked_by_user?(post.id) %> post-like fa-2x" data-id="<%= post.id %>"></i>
-              <i class="fa fa-comment fa-2x post-comment"></i>
+              <%= link_to post_path(post.id) do %>
+                <i class="fa fa-comment fa-2x post-comment"></i>
+              <% end %>
             </div>
             <p><strong id="post-<%= post.id %>-likes" ><%= post.total_likes_count %> likes</strong></p>
             <p><strong><%= link_to post.account.username, profile_path(post.account.username), class: "text-dark" %></strong><%= simple_format post.description %></p>
