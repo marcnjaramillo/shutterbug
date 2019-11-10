@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_30_035444) do
+ActiveRecord::Schema.define(version: 2019_11_10_032142) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,8 @@ ActiveRecord::Schema.define(version: 2019_10_30_035444) do
     t.bigint "post_id"
     t.bigint "account_id"
     t.string "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["account_id"], name: "index_comments_on_account_id"
     t.index ["post_id"], name: "index_comments_on_post_id"
   end
@@ -86,8 +88,8 @@ ActiveRecord::Schema.define(version: 2019_10_30_035444) do
     t.boolean "active"
     t.bigint "account_id"
     t.text "description"
-    t.integer "total_likes_count"
-    t.integer "total_comments_count"
+    t.integer "total_likes_count", default: 0
+    t.integer "total_comments_count", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["account_id"], name: "index_posts_on_account_id"
