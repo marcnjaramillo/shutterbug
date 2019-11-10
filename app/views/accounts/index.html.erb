@@ -41,7 +41,7 @@
     <div class="col-4">
       <div class="account-summary">
         <% if current_account.profile_image.attached? %>
-          <%= link_to image_tag(current_account.profile_image.variant(resize: "50x50"), class: "profile-pic float-left m-r-10"), profile_path(current_account.username) %>
+          <%= link_to image_tag(current_account.profile_image.variant(resize: "50x50"), class: "profile-pic float-left m-r-15"), profile_path(current_account.username) %>
         <% end %>
         <p class="m-0"><strong><%= link_to current_account.username, profile_path(current_account.username), class:"text-dark"  %></strong><br/><%= current_account.full_name %></p>
       </div>
