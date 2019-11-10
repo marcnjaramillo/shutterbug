@@ -8,11 +8,17 @@
         </div>
     </div>
     <div class="col-4">
+      <div class="post-meta">
+        <% if @post.account.profile_image.attached? %>
+          <%= link_to image_tag(@post.account.profile_image.variant(resize: "50x50"), class: "profile-pic"), profile_path(@post.account.username) %>
+        <% end %>
+         <%= link_to @post.account.username, profile_path(@post.account.username), class:"text-dark"  %>
+      </div>
       <div class="post-details">
 
         <div class="comments-feed">
-          <%= simple_format post.description %>
-          <%= render "posts/comments", post: post %>
+          <%= simple_format @post.description %>
+          <%= render "posts/comments", post: @post %>
         </div>
 
         <div class="post-actions">
@@ -26,7 +32,7 @@
       </div>
       <div class="comment-box">
         <%= form_for @comment do |f| %>
-          <%= f.hidden_field :post_id, value: post.id %>
+          <%= f.hidden_field :post_id, value: @post.id %>
           <%= f.hidden_field :return_to, value: "post" %>
           <div class="input-group">
           <%= f.text_field :comment, placeholder: "Add a comment...", class: "form-control post-comment" %>
