@@ -2,7 +2,7 @@ module AccountsHelper
   
   def profile_image account, width = 200
     image = account.profile_image.present? ? account.profile_image : "default.png"
-    image_tag(image, width: width, class: "profile-pic")
+    image_tag(image, width: width, class: "profile-pic m-r-10")
   end
 
   def can_edit_profile? profile_id
