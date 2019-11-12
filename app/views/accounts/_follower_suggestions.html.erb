@@ -12,7 +12,7 @@
           <%= hidden_field_tag :follow_id, account.id %>
           <%= submit_tag "Follow", class: "btn btn-info btn-sm" %>
         <% end %>
-        <p class="text-muted"><%= account.created_at > 1.days.ago ? "New to Shutterbug" : "Followed by users" %></p>     
+        <p class="text-muted"><%= account.created_at > 1.days.ago ? "New to Shutterbug" : "Followed by #{account.total_followers} users" %></p>     
       </div>
   </div>
 <% end %>
