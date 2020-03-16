@@ -2,6 +2,28 @@ body {
   background: #fafafa !important;
 }
 
+.app {
+  background: url(asset_path('camera.jpg')) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.main {
+  text-align: center;
+}
+
+.home-page {
+  background-color: rgba(255, 255, 255, 0.6);
+  margin-top: 100px;
+}
+
+.home-info {
+  margin-bottom: 48px;
+}
+
 .account-summary {
   text-align: left;
   margin-bottom: 20px;
